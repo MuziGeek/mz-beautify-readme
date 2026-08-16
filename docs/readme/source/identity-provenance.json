@@ -1,0 +1,16 @@
+{
+  "format": "mz.readme-identity-input/1",
+  "license": "MZ Reference Asset License 1.0",
+  "inputs": [
+    {
+      "path": "mz-beautify-readme/assets/identity/muzi-crayon-fullbody-style.png",
+      "sha256": "fc286c851a8cac6a9c3f943525c49b0cbc9aeb892a9bfc542f1b94f40901f07e",
+      "role": "Muzi connecting the core and optional overlay"
+    },
+    {
+      "path": "mz-beautify-readme/assets/identity/muzi-crayon-cat-master.png",
+      "sha256": "55eb8e4788cbfa4502adebb4593fd94e167f81c5e1a2f08773d0b3f142e37cd2",
+      "role": "subordinate companion beside localized output"
+    }
+  ]
+}

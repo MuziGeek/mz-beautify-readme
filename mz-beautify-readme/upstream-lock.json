@@ -1,0 +1,63 @@
+{
+  "format": "mz.upstream-snapshot/1",
+  "repository": "oil-oil/beautify-github-readme",
+  "commit": "55bdb1c05414cd7a0cf911d02e55ece79777206e",
+  "license": "MIT",
+  "files": [
+    {
+      "source": "skills/beautify-github-readme/SKILL.md",
+      "path": "references/upstream/SKILL.md",
+      "sha256": "f3854a1ff509d26f44e5e6a7547a3670e1d2733987d6b300ddcc68c1a17aa14b"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/content-architecture.md",
+      "path": "references/upstream/content-architecture.md",
+      "sha256": "6c915f670819947df2e64d045218afe072d538c418c5b1450d5ab92d755cee0d"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/github-readme-canvas.md",
+      "path": "references/upstream/github-readme-canvas.md",
+      "sha256": "576ce0add01c3e0ea2ff2c39a0a7e59c69d3096c05796b0671527930c56cb49d"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/hybrid-svg-production.md",
+      "path": "references/upstream/hybrid-svg-production.md",
+      "sha256": "ab664473785efb609461a73b957f8f69e6ed32730ce11689b6123d9d038b28b1"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/motion-production.md",
+      "path": "references/upstream/motion-production.md",
+      "sha256": "c9ada426364ee6fd089e434c01d5d34246413d4591421b41e2a5b786b94e895a"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/project-native-hero.md",
+      "path": "references/upstream/project-native-hero.md",
+      "sha256": "8630160574d789d04d7f7ef6553a8936a810808a822401982f231a3cc327ef29"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/showcase-contribution.md",
+      "path": "references/upstream/showcase-contribution.md",
+      "sha256": "b011cb4646719e832286b8e0ad03db38ac9e7a19b80d4c580cc0954b5dbcb567"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/svg-production.md",
+      "path": "references/upstream/svg-production.md",
+      "sha256": "062da9b8a552b5674ca3e79fbe04c02302d0ee5c6f61a24e3db2e64a61f58198"
+    },
+    {
+      "source": "skills/beautify-github-readme/references/visual-direction.md",
+      "path": "references/upstream/visual-direction.md",
+      "sha256": "09b1d2bf38e375ffa2a1d6b337ce5b649c38a9118d9f4242837e8979f3bb4912"
+    },
+    {
+      "source": "skills/beautify-github-readme/scripts/audit_readme.py",
+      "path": "scripts/upstream/audit_readme.py",
+      "sha256": "266d4ff92b9cb7ea78b48a2d26ed628940a09ee6d71c74881275567b0d2828ed"
+    },
+    {
+      "source": "skills/beautify-github-readme/scripts/render_motion_gif.py",
+      "path": "scripts/upstream/render_motion_gif.py",
+      "sha256": "e7332f450943c6ea604fb724159ecac5826614382f9dbeffe274d8ae68a669b5"
+    }
+  ]
+}

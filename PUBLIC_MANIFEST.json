@@ -1,0 +1,19 @@
+{
+  "format": "mz.public-skill/1",
+  "version": "0.2.0",
+  "repository": "MuziGeek/mz-beautify-readme",
+  "treeHashAlgorithm": "sha256(sorted payload-relative-path + tab + normalized-file-sha256 + LF)",
+  "licenses": {
+    "code": "MIT",
+    "referenceAssets": "MZ Reference Asset License 1.0"
+  },
+  "skill": {
+    "id": "mz-beautify-readme",
+    "directory": "mz-beautify-readme",
+      "treeHash": "a4205e0b54e627d02589cfbdb296865f36826a7c8b7fd2ac320522c0bae6d44b"
+  },
+  "release": {
+    "tag": "v0.2.0",
+    "artifactChecksumAlgorithm": "sha256"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MuziGeek/mz-beautify-readme/schema/mz.readme-brief.v2.json",
+  "title": "MZ README Brief v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["format", "scope", "repository", "audience", "oneSentenceValue", "primaryProof", "firstSuccessfulAction", "coreDecision", "overlay", "proofSources", "lockedCopy", "status"],
+  "properties": {
+    "format": {"const": "mz.readme-brief/2"},
+    "scope": {"enum": ["audit", "readme", "asset-only"]},
+    "repository": {"type": "string", "minLength": 1},
+    "audience": {"type": "string", "minLength": 1},
+    "oneSentenceValue": {"type": "string", "minLength": 1},
+    "primaryProof": {"type": "string", "minLength": 1},
+    "firstSuccessfulAction": {"type": "string", "minLength": 1},
+    "coreDecision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["upstreamCommit", "compositionMode", "implementation", "motion", "motionAuthorized", "themeSpec"],
+      "properties": {
+        "upstreamCommit": {"const": "55bdb1c05414cd7a0cf911d02e55ece79777206e"},
+        "compositionMode": {"enum": ["split", "integrated", "artifact-wall", "background-proof", "title-only"]},
+        "implementation": {"enum": ["svg", "hybrid", "raster", "none"]},
+        "motion": {"enum": ["none", "gif"]},
+        "motionAuthorized": {"type": "boolean"},
+        "themeSpec": {
+          "type": "object", "additionalProperties": false,
+          "required": ["palette", "typography", "shape", "motif", "composition"],
+          "properties": {
+            "palette": {"type": "string", "minLength": 1},
+            "typography": {"type": "string", "minLength": 1},
+            "shape": {"type": "string", "minLength": 1},
+            "motif": {"type": "string", "minLength": 1},
+            "composition": {"type": "string", "minLength": 1}
+          }
+        }
+      }
+    },
+    "overlay": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "activationReason", "characterMode", "companionMode", "displayFont"],
+      "properties": {
+        "id": {"enum": ["none", "muzi"]},
+        "activationReason": {"enum": ["explicit-enable", "explicit-disable", "ownership-default", "third-party-default", "uncertain-default"]},
+        "characterMode": {"enum": ["none", "muzi"]},
+        "companionMode": {"enum": ["include", "exclude"]},
+        "displayFont": {"enum": ["project-native", "pfanhututi", "fallback"]}
+      }
+    },
+    "localization": {
+      "type": "object", "additionalProperties": false,
+      "required": ["primaryLocale", "outputLocales", "assetStrategy", "readmeFiles"],
+      "properties": {
+        "primaryLocale": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"},
+        "outputLocales": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"}},
+        "assetStrategy": {"const": "localized-assets"},
+        "readmeFiles": {"type": "object", "minProperties": 1, "patternProperties": {"^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$": {"type": "string", "minLength": 1}}, "additionalProperties": false}
+      }
+    },
+    "proofSources": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "heroCopy": {"$ref": "#/$defs/heroCopy"},
+    "localizedHeroCopy": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/heroCopy"}},
+    "lockedCopy": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "status": {"enum": ["DRAFT", "GENERATION_BLOCKED", "VALIDATION_FAILED", "READY_FOR_REVIEW"]}
+  },
+  "$defs": {
+    "heroCopy": {
+      "type": "object", "additionalProperties": false,
+      "required": ["title", "value"],
+      "properties": {
+        "title": {"type": "string", "minLength": 1},
+        "value": {"type": "string", "minLength": 1},
+        "context": {"type": "string", "minLength": 1},
+        "processCue": {"type": "string", "minLength": 1},
+        "proofLabels": {"type": "array", "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "format": "mz.readme-samples/1",
+  "status": "READY_FOR_REVIEW",
+  "notice": "These are display snapshots copied from current local READY_FOR_REVIEW assets. The source repositories were not modified or pushed by this publication.",
+  "samples": [
+    {
+      "repository": "MuziGeek/mz-icon-design",
+      "url": "https://github.com/MuziGeek/mz-icon-design",
+      "sourceManifestSha256": "eba0a67e438a3a1e08a0b842350d2d265916d3e79ed8c3ca403e4a29d4aa73f2",
+      "composition": "artifact-wall",
+      "implementation": "hybrid",
+      "overlayId": "muzi",
+      "assets": [
+        {"path": "mz-icon-design/hero.webp", "locale": "en", "viewport": "desktop", "sha256": "aedac988edc26b2fd25094355e7d8ceba980f9442bdc57fc3e1e66984d5a41f4"},
+        {"path": "mz-icon-design/hero.mobile.webp", "locale": "en", "viewport": "mobile", "sha256": "8434d32417efd55776b73a8b41718779153d6071cf4170edfbb237f8bed3bccb"},
+        {"path": "mz-icon-design/hero.zh-CN.webp", "locale": "zh-CN", "viewport": "desktop", "sha256": "6ff9793c9c0ce2030f7adba500e63d3a3c20b80a640c8bc41e85f8f1aae68168"},
+        {"path": "mz-icon-design/hero.zh-CN.mobile.webp", "locale": "zh-CN", "viewport": "mobile", "sha256": "8ace021a72a96c917aadc317298cc8fe76466049c76b72314bd888155ca7e718"}
+      ]
+    },
+    {
+      "repository": "MuziGeek/mz-visual-engine",
+      "url": "https://github.com/MuziGeek/mz-visual-engine",
+      "sourceManifestSha256": "704942971f64e8db06ba870e2572c9195ac7e462f68aeb005572e0d6da2e7731",
+      "composition": "integrated",
+      "implementation": "svg",
+      "overlayId": "muzi",
+      "assets": [
+        {"path": "mz-visual-engine/hero.svg", "locale": "en", "viewport": "desktop", "sha256": "4ecf028b11c7ef7fda402e023da3fb672ee9ab7179ce649c7aeb6047d2da00a5"},
+        {"path": "mz-visual-engine/hero.mobile.svg", "locale": "en", "viewport": "mobile", "sha256": "ce5b814bdee3f9c4057f014bdaf8a1c8863ac68e62329df10ad40feee8da21f1"},
+        {"path": "mz-visual-engine/hero.zh-CN.svg", "locale": "zh-CN", "viewport": "desktop", "sha256": "44139ef92cdbc0a64ca3ded4a1973c6cd106593da98f048921ceaca78a38dbb2"},
+        {"path": "mz-visual-engine/hero.zh-CN.mobile.svg", "locale": "zh-CN", "viewport": "mobile", "sha256": "dd1dcc67221d17c0c724b0d1c21c7a94e854e340c3100d67749721144a6f5a80"}
+      ]
+    }
+  ]
+}

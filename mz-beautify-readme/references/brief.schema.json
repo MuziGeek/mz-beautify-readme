@@ -1,12 +1,12 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://github.com/MuziGeek/mz-beautify-readme/schema/mz.readme-brief.v2.json",
-  "title": "MZ README Brief v2",
+  "$id": "https://github.com/MuziGeek/mz-beautify-readme/schema/mz.readme-brief.v3.json",
+  "title": "MZ README Brief v3",
   "type": "object",
   "additionalProperties": false,
-  "required": ["format", "scope", "repository", "audience", "oneSentenceValue", "primaryProof", "firstSuccessfulAction", "coreDecision", "overlay", "proofSources", "lockedCopy", "status"],
+  "required": ["format", "scope", "repository", "audience", "oneSentenceValue", "primaryProof", "firstSuccessfulAction", "coreDecision", "visualBrief", "proofSources", "lockedCopy", "status"],
   "properties": {
-    "format": {"const": "mz.readme-brief/2"},
+    "format": {"const": "mz.readme-brief/3"},
     "scope": {"enum": ["audit", "readme", "asset-only"]},
     "repository": {"type": "string", "minLength": 1},
     "audience": {"type": "string", "minLength": 1},
@@ -35,15 +35,18 @@
         }
       }
     },
-    "overlay": {
-      "type": "object", "additionalProperties": false,
-      "required": ["id", "activationReason", "characterMode", "companionMode", "displayFont"],
+    "visualBrief": {
+      "type": "object",
+      "required": ["format", "engineVersion", "status", "asset", "style", "target", "engineCompat"],
       "properties": {
-        "id": {"enum": ["none", "muzi"]},
-        "activationReason": {"enum": ["explicit-enable", "explicit-disable", "ownership-default", "third-party-default", "uncertain-default"]},
-        "characterMode": {"enum": ["none", "muzi"]},
-        "companionMode": {"enum": ["include", "exclude"]},
-        "displayFont": {"enum": ["project-native", "pfanhututi", "fallback"]}
+        "format": {"const": "mz.visual-brief/1"},
+        "engineVersion": {"const": "2.0.0"},
+        "status": {"const": "RESOLVED"},
+        "asset": {"type": "object"},
+        "style": {"type": "object"},
+        "target": {"type": "object"},
+        "engineCompat": {"type": "object"},
+        "extension": {"type": "object"}
       }
     },
     "localization": {
@@ -53,10 +56,10 @@
         "primaryLocale": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"},
         "outputLocales": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$"}},
         "assetStrategy": {"const": "localized-assets"},
-        "readmeFiles": {"type": "object", "minProperties": 1, "patternProperties": {"^[a-z]{2,3}(-[A-Za-z0-9]{2,8})*$": {"type": "string", "minLength": 1}}, "additionalProperties": false}
+        "readmeFiles": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}}
       }
     },
-    "proofSources": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "proofSources": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
     "heroCopy": {"$ref": "#/$defs/heroCopy"},
     "localizedHeroCopy": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/heroCopy"}},
     "lockedCopy": {"type": "array", "items": {"type": "string", "minLength": 1}},

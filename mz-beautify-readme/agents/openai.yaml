@@ -1,4 +1,4 @@
 interface:
   display_name: "MZ Beautify README"
-  short_description: "Localized README design with optional Muzi overlay"
-  default_prompt: "Use $mz-beautify-readme to apply the pinned upstream README core, generate continuous-scene localized assets for every README language, add Muzi only when routing permits, and do not publish."
+  short_description: "Proof-first public README design with explicit Extensions"
+  default_prompt: "Use $mz-beautify-readme to redesign this README around real project proof, apply only an explicitly supplied visual Extension, validate localized assets, and stop before publishing."

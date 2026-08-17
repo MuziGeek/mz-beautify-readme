@@ -1,0 +1,30 @@
+{
+  "format": "mz.style-preset/1",
+  "id": "mz-readme-project-native-v1",
+  "label": "MZ Project-Native README V1",
+  "family": "project-native-editorial",
+  "version": "1.0.0",
+  "status": "APPROVED_FOR_SKILL_OPERATION",
+  "profiles": ["readme-visual"],
+  "tokensRef": "mz-neutral-core-v1",
+  "allowedModifiers": ["mz-quiet-v1", "mz-handcrafted-v1"],
+  "rules": {
+    "identity": ["project-native", "proof-first", "accessible", "review-first"],
+    "geometry": "preserve the README core's selected composition and responsive relationship",
+    "stroke": "use project-native geometry with only controlled public MZ handmade variation",
+    "color": "derive the visual hierarchy from repository evidence and neutral semantic roles",
+    "texture": "restrained physical texture only when compatible with the selected implementation",
+    "composition": "lock audience, value, proof, information order, and implementation before visual treatment",
+    "depth": "selected by the README core",
+    "detailBudget": "real proof remains primary; decoration cannot displace evidence or the first successful action",
+    "avoid": [
+      "invented claims",
+      "fabricated screenshots",
+      "owner-derived identity",
+      "fixed personal characters",
+      "remote dependencies in published SVG",
+      "unauthorized animation"
+    ]
+  },
+  "goldens": {"status": "APPROVED_FOR_SKILL_OPERATION", "reason": "The public README executor retains content, proof, implementation, and GitHub QA authority."}
+}

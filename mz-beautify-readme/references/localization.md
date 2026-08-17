@@ -11,7 +11,7 @@ Use this workflow when a repository has more than one README language or the use
 
 ## Preserve one design decision
 
-Localization may adapt line breaks, font fallback, spacing, and text size for glyph coverage and reading rhythm. It may not change content claims, proof, composition mode, implementation, Overlay, character/cat participation, or motion.
+Localization may adapt line breaks, font fallback, spacing, and text size for glyph coverage and reading rhythm. It may not change content claims, proof, composition mode, implementation, the validated visual Brief, Extension participation, or motion.
 
 Keep the project name, commands, API names, versions, and technical identifiers exact unless the repository already localizes them. Translate meaning, not word order. Use repository terminology rather than an unreviewed literal translation.
 
@@ -26,7 +26,7 @@ Keep the project name, commands, API names, versions, and technical identifiers 
   - localized desktop: `hero.<locale>.webp`
   - localized mobile: `hero.<locale>.mobile.webp`
 - SVG and PNG use the same naming grammar with their own extension.
-- Record `locale` and `viewport` for every published asset and variant in `mz.readme-asset/2`.
+- Record `locale` and `viewport` for every published asset and variant in `mz.readme-asset/3`.
 
 ## Embed and validate
 

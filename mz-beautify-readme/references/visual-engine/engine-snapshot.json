@@ -1,0 +1,60 @@
+{
+  "format": "mz.engine-snapshot/1",
+  "engineVersion": "2.0.0",
+  "target": "readme",
+  "sourceCatalogHash": "2f74eaa8d55b4037b702c200ace510b9b9a7680c861070be0c04ee04e9824ed0",
+  "files": [
+    {
+      "path": "schemas/mz-contracts-v1.json",
+      "sha256": "59341b44ab0032bbe9f4f3c7f2e4e80f391e98875cb0b0c5974fa9c8ed6660b4"
+    },
+    {
+      "path": "references/core.md",
+      "sha256": "2cd977c2566af992237f0f78487f83c03e1ea838526f8c7010446e6b82a39fad"
+    },
+    {
+      "path": "references/contracts.md",
+      "sha256": "39e252987964fbd438550465dc4dab6ac6ee55d2179a89f0d285308644ed5ee9"
+    },
+    {
+      "path": "references/evaluation.md",
+      "sha256": "5c6c58fff4c687e0b6cfff8578fafba1796b194199824566ea1c2f7d17e64f1a"
+    },
+    {
+      "path": "scripts/engine_lib.py",
+      "sha256": "6bea61145b76605c6372f68afbf9411ea3cfcfc862dbdce4608e0cb74c0e85c2"
+    },
+    {
+      "path": "scripts/verify_snapshot.py",
+      "sha256": "29dc7d033ca57a0a7fa517abd86c2b294699688e6e1d781833d9dca60a1c8f91"
+    },
+    {
+      "path": "styles/presets/mz-readme-project-native-v1.json",
+      "sha256": "a18a4537301955391ad6fdd2df4757c291e66c30c71994c752eec591b81a4d66"
+    },
+    {
+      "path": "styles/modifiers/mz-handcrafted-v1.json",
+      "sha256": "97c9b210e0b61cd1edfc8485e2e86a1c32961a590717e529c33e19302f2b45f4"
+    },
+    {
+      "path": "styles/modifiers/mz-quiet-v1.json",
+      "sha256": "aa36851d45bb9c328b149450b1cef88c0c6151cf4b0b2407d89b9a7ac526dec6"
+    },
+    {
+      "path": "tokens/mz-neutral-core-v1.json",
+      "sha256": "d918c7e42b413d643f1fd113b2642b88f643cd99a94b5cb8a8ccae3d528a49a3"
+    },
+    {
+      "path": "profiles/readme-visual.json",
+      "sha256": "258c49813cb718d0fff6f0d459a3587b0bdc5195de00d4b1134456ac908d80c9"
+    }
+  ],
+  "snapshotHash": "3ce1f64ae05533ea8a61939414f2007dfc3c1881732f62a49513dc90d5a56f09",
+  "compat": {
+    "format": "mz.engine-compat/1",
+    "engineVersion": "2.0.0",
+    "target": "readme",
+    "snapshotHash": "3ce1f64ae05533ea8a61939414f2007dfc3c1881732f62a49513dc90d5a56f09",
+    "sourceCatalogHash": "2f74eaa8d55b4037b702c200ace510b9b9a7680c861070be0c04ee04e9824ed0"
+  }
+}

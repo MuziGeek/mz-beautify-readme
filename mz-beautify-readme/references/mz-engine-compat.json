@@ -1,0 +1,9 @@
+{
+  "format": "mz.engine-compat/1",
+  "engineVersion": "2.0.0",
+  "target": "readme",
+  "snapshotHash": "3ce1f64ae05533ea8a61939414f2007dfc3c1881732f62a49513dc90d5a56f09",
+  "sourceCatalogHash": "2f74eaa8d55b4037b702c200ace510b9b9a7680c861070be0c04ee04e9824ed0",
+  "skillId": "mz-beautify-readme",
+  "skillVersion": "1.0.0"
+}

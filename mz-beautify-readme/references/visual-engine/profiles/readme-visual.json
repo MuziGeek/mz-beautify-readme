@@ -1,0 +1,17 @@
+{
+  "format": "mz.asset-profile/1",
+  "id": "readme-visual",
+  "target": {"skill": "mz-beautify-readme", "mode": "readme"},
+  "supportedPresets": ["mz-readme-project-native-v1"],
+  "hardConstraints": {
+    "format": "route-selected",
+    "sourceIdentity": "repository-evidence",
+    "prohibited": [
+      "invented project claims",
+      "fabricated proof",
+      "changed upstream core decision",
+      "unapproved motion",
+      "unsafe GitHub markup"
+    ]
+  }
+}

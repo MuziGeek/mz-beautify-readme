@@ -1,95 +1,59 @@
 ---
 name: mz-beautify-readme
-description: Redesign, refresh, localize, or audit GitHub README homepages using the pinned oil-oil/beautify-github-readme design core, with an optional Muzi Visual Overlay for Muzi-owned repositories. Use for README audits, multilingual README and Hero sets, project-native continuous-scene heroes, proof-first redesigns, MZ-branded assets, and GitHub-safe SVG, hybrid, raster, or explicitly authorized GIF delivery.
+description: Redesign, refresh, localize, or audit GitHub README homepages with a pinned proof-first design core and an identity-neutral public MZ visual route. Use for README audits, multilingual README and Hero sets, project-native continuous-scene heroes, GitHub-safe SVG, hybrid, raster, or explicitly authorized GIF delivery, including validated mz.visual-brief/1 handoffs and explicitly supplied visual Extensions.
 ---
 
 # MZ Beautify README
 
-Use the exact upstream design system first. Muzi is a visual overlay, never a replacement design system.
+Lock repository truth and the README design core before applying a public visual brief or an explicitly supplied Extension. Never infer identity from repository ownership.
 
 ## 1. Verify and load the upstream core
 
-Run `python scripts/verify_upstream_snapshot.py`. Stop if verification fails.
+Run `python scripts/verify_upstream_snapshot.py`. Stop if verification fails. Read the pinned core at [references/upstream/SKILL.md](references/upstream/SKILL.md) and its directly linked production references. Never edit the byte-locked snapshot during ordinary execution.
 
-Read the full pinned core at [references/upstream/SKILL.md](references/upstream/SKILL.md). Its relative references map to this package as follows:
+## 2. Lock the README core decision
 
-- `references/content-architecture.md` → [references/upstream/content-architecture.md](references/upstream/content-architecture.md)
-- `references/visual-direction.md` → [references/upstream/visual-direction.md](references/upstream/visual-direction.md)
-- `references/project-native-hero.md` → [references/upstream/project-native-hero.md](references/upstream/project-native-hero.md)
-- `references/github-readme-canvas.md` → [references/upstream/github-readme-canvas.md](references/upstream/github-readme-canvas.md)
-- `references/svg-production.md` → [references/upstream/svg-production.md](references/upstream/svg-production.md)
-- `references/hybrid-svg-production.md` → [references/upstream/hybrid-svg-production.md](references/upstream/hybrid-svg-production.md)
-- `references/motion-production.md` → [references/upstream/motion-production.md](references/upstream/motion-production.md)
-- `references/showcase-contribution.md` → [references/upstream/showcase-contribution.md](references/upstream/showcase-contribution.md)
-- upstream scripts → `scripts/upstream/`
+1. Choose `audit`, `readme`, or `asset-only`.
+2. Inspect repository truth and lock audience, one-sentence value, primary proof, first successful action, proof sources, claims, and visible copy.
+3. Let the pinned core choose its five-part theme, one composition, and one implementation route. GIF remains explicit opt-in.
+4. Record these immutable choices under `coreDecision` in `mz.readme-brief/3`.
 
-The snapshot and its files are locked by `upstream-lock.json`. Never edit them to add Muzi rules. Normal Skill execution is offline. Maintainers may run `python scripts/sync_upstream.py --check`; only an explicit maintenance task may use `--apply`.
+## 3. Resolve the public visual handoff
 
-## 2. Make and lock the core decision
-
-Follow the upstream sequence without Muzi styling:
-
-1. Choose exactly one scope: `audit`, `readme`, or `asset-only`.
-2. Inspect repository truth and extract audience, one-sentence value, primary proof, first successful action, and claims requiring evidence.
-3. Write the upstream five-part theme specification: palette, typography, shape, motif, and composition.
-4. Choose one composition: `split`, `integrated`, `artifact-wall`, `background-proof`, or `title-only`.
-5. Choose one implementation: `svg`, `hybrid`, `raster`, or `none`. GIF remains explicit opt-in.
-
-Record these immutable choices under `coreDecision` in `mz.readme-brief/2`. Muzi must not alter them later.
-
-## 3. Resolve the optional Overlay
-
-Run:
+For direct use, create `mz.intent/1` with `readme-visual + mz-readme-project-native-v1` and resolve it through the bundled Engine Snapshot. For an external brief, run:
 
 ```text
-python scripts/resolve_overlay.py --repository owner/name --explicit auto
+python scripts/validate_visual_brief.py path/to/visual-brief.json
+python scripts/validate_visual_brief.py path/to/visual-brief.json --extension path/to/explicit-extension
 ```
 
-Routing priority is fixed:
+An Extension is valid only when supplied explicitly and hash-valid. It may change visual tokens, texture, marks, and permitted character treatment. It may not change repository facts, proof, copy, content order, `coreDecision`, dimensions, localization, implementation, motion authorization, GitHub safety, or acceptance rules.
 
-1. Explicit user enable or disable wins.
-2. Owner `MuziGeek` defaults to `muzi`.
-3. Third-party and uncertain ownership default to `none`.
-4. `MZ` appearing in a repository name is never ownership evidence.
+Embed the resolved object as `visualBrief` in `mz.readme-brief/3`. Do not auto-discover an Extension, inspect the repository owner for identity, or install a missing dependency.
 
-For `overlay.id=none`, continue with the upstream project-native theme unchanged. For `overlay.id=muzi`, read [references/muzi-overlay.md](references/muzi-overlay.md). Read [references/muzi-crayon-production.md](references/muzi-crayon-production.md) only when a Muzi character has a concrete communication job.
+## 4. Validate and produce
 
-## 4. Validate the brief before production
+Run `python scripts/validate_brief.py path/to/readme-brief.json`. For multiple languages, read [references/localization.md](references/localization.md), lock one copy layer per locale, and never reuse a text-bearing asset across languages.
 
-Use [brief.schema.json](references/brief.schema.json), then run:
-
-```text
-python scripts/validate_brief.py path/to/readme-brief.json
-```
-
-Hero copy requires only a project `title` and concrete `value`. `context`, `processCue`, and `proofLabels` are optional and project-driven. Keep exact claims, commands, and labels deterministic. Preserve proof sources and lock every visible string before `READY_FOR_REVIEW`.
-
-When the repository has multiple README languages, read [references/localization.md](references/localization.md). Record `localization`, generate one deterministic copy layer per locale, and never reuse a text-bearing asset across languages.
-
-When comparing overlay-on and overlay-off variants, run `python scripts/compare_core_decisions.py none.json muzi.json`. Content, proof, copy, composition, implementation, and motion decisions must remain identical.
-
-## 5. Produce through the upstream route
-
-Use the production guide selected by the core:
+Use the production guide selected by `coreDecision`:
 
 - SVG → [references/upstream/svg-production.md](references/upstream/svg-production.md)
 - Hybrid → [references/upstream/hybrid-svg-production.md](references/upstream/hybrid-svg-production.md)
-- Raster → upstream project-native and canvas guidance
+- Raster → project-native and GitHub canvas guidance
 - GIF → [references/upstream/motion-production.md](references/upstream/motion-production.md), only after explicit authorization
 
-Muzi changes tokens and rendering treatment only. A divider is allowed only when the upstream core chose `split`; its position is solved per project, never fixed globally. Characters, cats, flourishes, or floating cards may not force a new composition or displace real proof. For a Muzi one-board Hybrid hero, read [references/continuous-scene-composition.md](references/continuous-scene-composition.md) and pass its anti-collage gate before review.
+When comparing public and Extension variants, run `python scripts/compare_core_decisions.py public.json extension.json`. Differences outside `visualBrief` and `status` fail.
 
-## 6. Validate, preview, and stop
+## 5. Preview and stop
 
-Create `mz.readme-asset/2` from [asset-manifest.schema.json](references/asset-manifest.schema.json) and run:
+Create `mz.readme-asset/3`, then run the README audit, asset-manifest validator, desktop/mobile previews, and visual-balance audit. Inspect every locale at 900px and 360px on light and dark GitHub surroundings.
 
-```text
-python scripts/audit_readme.py path/to/README.md
-python scripts/validate_asset_manifest.py path/to/hero-manifest.json
-python scripts/build_asset_previews.py path/to/hero.webp path/to/previews
-python scripts/audit_visual_balance.py path/to/hero.webp
-```
+Stop at `READY_FOR_REVIEW`. Do not commit, push, publish, create a remote, open a PR, or submit to a showcase without separate authorization.
 
-Apply the upstream accessibility, GitHub safety, responsive, file-size, theme, and real-proof gates. Inspect at `900px` and `360px` on light and dark GitHub surroundings. For multilingual sets, run the same checks for every locale and verify README-to-asset and localized-alt routing. Verify deterministic rebuild hashes where the route promises them.
+## Resources
 
-Stop at `READY_FOR_REVIEW`. Do not commit, push, publish, create a remote, open a PR, or submit to an upstream showcase without separate explicit authorization.
+- `references/visual-engine/`: managed public Engine Snapshot.
+- `references/brief.schema.json`: `mz.readme-brief/3`.
+- `references/asset-manifest.schema.json`: `mz.readme-asset/3`.
+- `references/upstream/`: pinned README design core.
+- `scripts/`: visual-brief, README, localization, preview, and audit validation.

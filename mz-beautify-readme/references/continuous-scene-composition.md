@@ -1,6 +1,6 @@
 # Continuous-scene composition
 
-Use this gate for a Muzi one-board Hybrid hero that combines generated material with real project proof.
+Use this gate for any one-board Hybrid hero that combines generated material with real project proof.
 
 ## Accepted lesson
 

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">MZ Beautify README</title>
+  <desc id="desc">Repository truth becomes a locked README core, then a validated public visual brief, localized assets, and review.</desc>
+  <rect width="1200" height="420" rx="28" fill="#F7F4ED"/>
+  <path d="M56 72H1144M56 348H1144" stroke="#D8D2C6" stroke-width="2" stroke-dasharray="8 10"/>
+  <text x="64" y="54" font-family="Segoe UI, sans-serif" font-size="15" font-weight="700" letter-spacing="2" fill="#77736B">PROOF-FIRST · PROJECT-NATIVE · REVIEW-FIRST</text>
+  <text x="64" y="133" font-family="Georgia, serif" font-size="58" font-weight="700" fill="#263238">MZ Beautify README</text>
+  <text x="64" y="179" font-family="Segoe UI, sans-serif" font-size="22" fill="#607D7A">Lock the core. Apply one validated visual brief.</text>
+  <g font-family="Segoe UI, sans-serif" font-size="17" font-weight="700" fill="#263238">
+    <rect x="64" y="238" width="210" height="76" rx="18" fill="#FFFDF8" stroke="#8A6F47" stroke-width="3"/>
+    <text x="169" y="282" text-anchor="middle">REPOSITORY PROOF</text>
+    <path d="M286 276H366" stroke="#B56B4A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M354 264L370 276L354 288" fill="none" stroke="#B56B4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="382" y="226" width="214" height="100" rx="18" fill="#E9E4D9" stroke="#607D7A" stroke-width="3"/>
+    <text x="489" y="270" text-anchor="middle">LOCKED CORE</text>
+    <text x="489" y="295" text-anchor="middle" font-size="13" fill="#77736B">content · proof · route</text>
+    <path d="M608 276H688" stroke="#B56B4A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M676 264L692 276L676 288" fill="none" stroke="#B56B4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="704" y="226" width="222" height="100" rx="18" fill="#FFFDF8" stroke="#8A6F47" stroke-width="3"/>
+    <text x="815" y="270" text-anchor="middle">VISUAL BRIEF</text>
+    <text x="815" y="295" text-anchor="middle" font-size="13" fill="#77736B">public or explicit extension</text>
+    <path d="M938 276H1006" stroke="#B56B4A" stroke-width="4" stroke-linecap="round"/>
+    <path d="M994 264L1010 276L994 288" fill="none" stroke="#B56B4A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="1022" y="238" width="122" height="76" rx="18" fill="#607D7A"/>
+    <text x="1083" y="272" text-anchor="middle" fill="#FFFDF8">READY</text>
+    <text x="1083" y="294" text-anchor="middle" font-size="12" fill="#FFFDF8">FOR REVIEW</text>
+  </g>
+</svg>

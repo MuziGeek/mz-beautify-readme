@@ -10,7 +10,7 @@
 - Source: https://github.com/oil-oil/beautify-github-readme
 - Pinned commit: `55bdb1c05414cd7a0cf911d02e55ece79777206e`
 
-The snapshot contains the upstream `SKILL.md`, eight design references, and two core scripts. Exact source paths and SHA-256 hashes are recorded in `upstream-lock.json`. Muzi rules are kept outside the snapshot.
+The snapshot contains the upstream `SKILL.md`, eight design references, and two core scripts. Exact source paths and SHA-256 hashes are recorded in `upstream-lock.json`. Identity or brand Extensions are never bundled in this public package.
 
 The upstream MIT permission notice is preserved below for the adapted portions:
 
@@ -37,7 +37,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-## Muzi identity references
-
-The three bundled identity references are selected copies from `MuziGeek/mz-crayon-illustrations`. They are governed by the MZ Reference Asset License 1.0 and retain their source hashes in `assets/identity/identity-manifest.json`.

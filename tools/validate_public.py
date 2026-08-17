@@ -16,7 +16,7 @@ SKILL_ID = ROOT.name
 PAYLOAD = ROOT / SKILL_ID
 MANIFEST = ROOT / "PUBLIC_MANIFEST.json"
 ALLOWED_ROOTS = {
-    ".gitattributes", ".gitignore", "ASSET_LICENSE.md", "LICENSE", "NOTICE.md",
+    ".gitattributes", ".gitignore", "LICENSE", "NOTICE.md",
     "PUBLIC_MANIFEST.json", "README.md", "README.zh-CN.md", "docs", SKILL_ID, "tools",
 }
 FORBIDDEN_PARTS = {"raw", "rejected", "tmp", "__pycache__", ".pytest_cache"}
@@ -28,6 +28,14 @@ FORBIDDEN_TEXT = (
     (re.compile(r"(?i)[a-z]:\\(?:users|gitproject|muzi)\\", re.ASCII), "Windows absolute path"),
     (re.compile(r"(?i)\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b"), "email address"),
     (re.compile(r"(?<!\d)1[3-9]\d{9}(?!\d)"), "Chinese mobile number"),
+    (re.compile("|".join((
+        "muzi-(?:core|character|icon|knowledge|zine|readme)",
+        "PFan" + "HuTuTi",
+        "Muzi Visual " + "Overlay",
+        "muzi-" + "crayon",
+        "assets/" + "identity",
+        "extensions/" + "muzi",
+    )), re.IGNORECASE), "private visual identifier"),
 )
 
 
@@ -91,6 +99,8 @@ def main() -> int:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
         for pattern, label in FORBIDDEN_TEXT:
+            if label == "private visual identifier" and path == Path(__file__).resolve():
+                continue
             scan = re.sub(r"(?i)\b[0-9a-f]{64}\b", "<sha256>", text) if label == "Chinese mobile number" else text
             if pattern.search(scan):
                 errors.append(f"{relative.as_posix()}: {label}")
@@ -113,20 +123,12 @@ def main() -> int:
         if f"name: {SKILL_ID}" not in frontmatter:
             errors.append("SKILL.md name does not match repository payload")
 
-    for name in ("LICENSE", "ASSET_LICENSE.md", "NOTICE.md", "THIRD_PARTY_NOTICES.md"):
+    for name in ("LICENSE", "NOTICE.md", "THIRD_PARTY_NOTICES.md"):
         if not (PAYLOAD / name).is_file():
             errors.append(f"Payload lacks {name}")
 
-    identity = json.loads((PAYLOAD / "assets" / "identity" / "identity-manifest.json").read_text(encoding="utf-8"))
-    if identity.get("status") != "APPROVED_FOR_SKILL_OPERATION":
-        errors.append("identity reference set is not approved for Skill operation")
-    for item in identity.get("assets", []):
-        path = PAYLOAD / "assets" / "identity" / item.get("path", "")
-        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item.get("sha256"):
-            errors.append(f"identity asset mismatch: {item.get('path')}")
-
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    if manifest.get("format") != "mz.public-skill/1" or manifest.get("version") != "0.2.0":
+    if manifest.get("format") != "mz.public-skill/1" or manifest.get("version") != "1.0.0":
         errors.append("PUBLIC_MANIFEST.json has an unexpected format or version")
     if manifest.get("repository") != f"MuziGeek/{SKILL_ID}":
         errors.append("PUBLIC_MANIFEST.json repository mismatch")
@@ -136,13 +138,31 @@ def main() -> int:
     actual = tree_hash()
     if skill.get("treeHash") != actual:
         errors.append(f"Skill tree hash mismatch: expected {actual}")
-    if manifest.get("release", {}).get("tag") != "v0.2.0":
+    if manifest.get("release", {}).get("tag") != "v1.0.0":
         errors.append("release tag mismatch")
 
     verifier = PAYLOAD / "scripts" / "verify_upstream_snapshot.py"
     result = subprocess.run([sys.executable, str(verifier)], text=True, capture_output=True)
     if result.returncode:
         errors.append(f"upstream snapshot verification failed: {result.stdout}{result.stderr}".strip())
+
+    snapshot = PAYLOAD / "references" / "visual-engine"
+    snapshot_manifest = json.loads((snapshot / "engine-snapshot.json").read_text(encoding="utf-8"))
+    compat = json.loads((PAYLOAD / "references" / "mz-engine-compat.json").read_text(encoding="utf-8"))
+    snapshot_verifier = snapshot / "scripts" / "verify_snapshot.py"
+    result = subprocess.run([sys.executable, str(snapshot_verifier), str(snapshot)], text=True, capture_output=True)
+    if result.returncode:
+        errors.append(f"MZ Visual Engine snapshot verification failed: {result.stdout}{result.stderr}".strip())
+    if any(snapshot_manifest.get(key) != compat.get(key) for key in ("engineVersion", "target", "snapshotHash", "sourceCatalogHash")):
+        errors.append("MZ Visual Engine compatibility declaration does not match the bundled Snapshot")
+
+    engine = manifest.get("visualEngine", {})
+    if (
+        engine.get("version") != "2.0.0"
+        or engine.get("snapshotHash") != snapshot_manifest.get("snapshotHash")
+        or engine.get("sourceCatalogHash") != snapshot_manifest.get("sourceCatalogHash")
+    ):
+        errors.append("PUBLIC_MANIFEST.json Visual Engine declaration mismatch")
 
     quick = ROOT / "tools" / "quick_validate.py"
     if quick.is_file():
@@ -151,9 +171,7 @@ def main() -> int:
             errors.append(f"quick validation failed: {result.stdout}{result.stderr}".strip())
 
     showcase_checks = (
-        ("sample provenance", ROOT / "tools" / "validate_samples.py", []),
-        ("README brief", PAYLOAD / "scripts" / "validate_brief.py", [ROOT / "docs" / "readme" / "source" / "hero-brief.json"]),
-        ("README asset manifest", PAYLOAD / "scripts" / "validate_asset_manifest.py", [ROOT / "docs" / "readme" / "hero-manifest.json"]),
+        ("Skill tests", PAYLOAD / "scripts" / "test_mz_beautify_readme.py", []),
         ("English README audit", PAYLOAD / "scripts" / "audit_readme.py", [ROOT / "README.md"]),
         ("Chinese README audit", PAYLOAD / "scripts" / "audit_readme.py", [ROOT / "README.zh-CN.md"]),
     )

@@ -40,8 +40,10 @@
     "publishedAsset": {"$ref": "#/$defs/file"},
     "variants": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/file"}},
     "sources": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/file"}},
-    "validation": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["boolean", "string", "number"]}}
+    "validation": {"type": "object", "minProperties": 1, "additionalProperties": {"type": ["boolean", "string", "number"]}},
+    "review": {"$ref": "#/$defs/file"}
   },
+  "allOf": [{"if": {"properties": {"status": {"const": "READY_FOR_REVIEW"}}, "required": ["status"]}, "then": {"required": ["review"]}}],
   "$defs": {
     "file": {
       "type": "object", "additionalProperties": false,

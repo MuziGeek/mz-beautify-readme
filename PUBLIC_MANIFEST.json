@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "repository": "MuziGeek/mz-beautify-readme",
   "treeHashAlgorithm": "sha256(sorted payload-relative-path + tab + normalized-file-sha256 + LF)",
-  "licenses": {"code": "MIT"},
+  "licenses": {
+    "code": "MIT"
+  },
   "skill": {
     "id": "mz-beautify-readme",
     "directory": "mz-beautify-readme",
-      "treeHash": "4d3a4a1f0d336a5be912eeba5b55f1df034371022da8cb617c9e1efb6d6c3e23"
+    "treeHash": "70b0d47656759ecc8ed4412f8aa9578ab12fb8c5c42da78ada190de1491c2439"
   },
   "visualEngine": {
     "version": "2.0.0",

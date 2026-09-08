@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img"><title>MZ Beautify README — 工程蓝图</title><desc>风格构图示例；不是实际应用界面。</desc>
+<rect x="0" y="0" width="1200" height="620" rx="0" fill="#e7edf9"/>
+<path d="M0 0L0 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M60 0L60 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M120 0L120 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M180 0L180 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M240 0L240 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M300 0L300 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M360 0L360 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M420 0L420 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M480 0L480 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M540 0L540 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M600 0L600 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M660 0L660 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M720 0L720 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M780 0L780 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M840 0L840 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M900 0L900 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M960 0L960 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M1020 0L1020 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M1080 0L1080 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M1140 0L1140 620" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 0L1200 0" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 60L1200 60" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 120L1200 120" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 180L1200 180" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 240L1200 240" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 300L1200 300" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 360L1200 360" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 420L1200 420" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 480L1200 480" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 540L1200 540" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 600L1200 600" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<text x="60" y="65" font-family="Consolas, Menlo, monospace" font-size="23" font-weight="600" fill="#253e80">MZ / BEAUTIFY</text>
+<text x="53" y="241" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="175" font-weight="600" fill="#253e80">README</text>
+<text x="60" y="314" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="36" font-weight="400" fill="#253e80">以真实内容，设计项目首页。</text>
+<rect x="60" y="392" width="310" height="138" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="85" y="438" font-family="Consolas, Menlo, monospace" font-size="22" font-weight="600" fill="#4777c4">01</text>
+<text x="85" y="494" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="35" font-weight="600" fill="#253e80">读项目</text>
+<path d="M370 461L435 461" stroke="#4777c4" stroke-width="3" fill="none"/>
+<rect x="435" y="392" width="310" height="138" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="460" y="438" font-family="Consolas, Menlo, monospace" font-size="22" font-weight="600" fill="#4777c4">02</text>
+<text x="460" y="494" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="35" font-weight="600" fill="#253e80">做设计</text>
+<path d="M745 461L810 461" stroke="#4777c4" stroke-width="3" fill="none"/>
+<rect x="810" y="392" width="310" height="138" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="835" y="438" font-family="Consolas, Menlo, monospace" font-size="22" font-weight="600" fill="#4777c4">03</text>
+<text x="835" y="494" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="35" font-weight="600" fill="#253e80">看成品</text>
+</svg>

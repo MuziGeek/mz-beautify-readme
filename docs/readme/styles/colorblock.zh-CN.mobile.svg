@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" role="img"><title>MZ Beautify README — 色块工作室</title><desc>风格构图示例；不是实际应用界面。</desc>
+<rect x="0" y="0" width="360" height="320" rx="0" fill="#f2d4c6"/>
+<rect x="0" y="0" width="122.4" height="320" rx="0" fill="#eed37e"/>
+<rect x="241.20000000000002" y="0" width="118.80000000000001" height="160.0" rx="0" fill="#c8b5df"/>
+<rect x="122.4" y="214.4" width="237.60000000000002" height="105.60000000000001" rx="0" fill="#df775a"/>
+<circle cx="295.2" cy="70.4" r="45" fill="#8851a6"/>
+<text x="22" y="36" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="13" font-weight="700" fill="#382d47">MZ / BEAUTIFY</text>
+<text x="17" y="140" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="68" font-weight="800" fill="#382d47">README</text>
+<text x="22" y="183" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="17" font-weight="500" fill="#382d47">以真实内容，设计项目首页。</text>
+<text x="23" y="280" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#382d47">读项目</text>
+<text x="134" y="280" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#382d47">做设计</text>
+<text x="245" y="280" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#382d47">看成品</text>
+</svg>

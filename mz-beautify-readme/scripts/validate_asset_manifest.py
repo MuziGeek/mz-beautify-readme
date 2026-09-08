@@ -20,7 +20,7 @@ def check_file(item: object, root: Path, label: str, errors: list[str]) -> None:
     relative, expected = item.get("path"), item.get("sha256")
     if not isinstance(relative, str) or not relative: errors.append(f"{label}.path must be non-empty"); return
     pure = PurePosixPath(relative.replace("\\", "/"))
-    if pure.is_absolute() or ".." in pure.parts: errors.append(f"{label}.path must be repository-relative"); return
+    if pure.is_absolute() or ".." in pure.parts or ':' in relative: errors.append(f"{label}.path must be repository-relative"); return
     if not isinstance(expected, str) or not re.fullmatch(r"[0-9a-f]{64}", expected): errors.append(f"{label}.sha256 must be lowercase SHA-256"); return
     path = (root / Path(*pure.parts)).resolve()
     try: path.relative_to(root.resolve())
@@ -33,7 +33,7 @@ def validate(data: object, root: Path) -> list[str]:
     if not isinstance(data, dict): return ["manifest root must be an object"]
     errors: list[str] = []
     required = {"format", "status", "repository", "upstreamCore", "brief", "visualBrief", "publishedAsset", "sources", "validation"}
-    allowed = required | {"variants", "localization", "extension"}
+    allowed = required | {"variants", "localization", "extension", "review"}
     if required - set(data): errors.append(f"missing fields: {', '.join(sorted(required-set(data)))}")
     if set(data) - allowed: errors.append(f"unknown fields: {', '.join(sorted(set(data)-allowed))}")
     if data.get("format") != "mz.readme-asset/3": errors.append("format must be mz.readme-asset/3")
@@ -77,6 +77,29 @@ def validate(data: object, root: Path) -> list[str]:
     elif data.get("status") == "READY_FOR_REVIEW":
         failed = [key for key, value in validation.items() if isinstance(value, bool) and not value]
         if failed: errors.append(f"READY_FOR_REVIEW has failed checks: {', '.join(sorted(failed))}")
+    if data.get('status') == 'READY_FOR_REVIEW':
+        from validate_readme_review import read_ref, read_json, validate as validate_review
+        review_path = read_ref(data.get('review'), root, errors, 'review')
+        review = read_json(review_path, errors, 'review')
+        deliverables = [data.get(key) for key in ('brief', 'visualBrief', 'publishedAsset')]
+        deliverables += variants if isinstance(variants, list) else []
+        deliverables += sources if isinstance(sources, list) else []
+        # Review and asset manifests share a repository root, even when reports live below it.
+        if review_path and review_path.parent != root.resolve(): errors.append('review must be at the manifest root')
+        locales = localization.get('outputLocales') if isinstance(localization, dict) else None
+        if review:
+            errors.extend(validate_review(review, root, [item for item in deliverables if isinstance(item, dict)], locales))
+            from validate_brief import validate as validate_brief
+            brief_data = read_json(read_ref(data.get('brief'), root, errors, 'brief'), errors, 'brief')
+            errors.extend(validate_brief(brief_data))
+            visual_data = read_json(read_ref(data.get('visualBrief'), root, errors, 'visualBrief'), errors, 'visualBrief')
+            if brief_data.get('visualBrief') != visual_data: errors.append('visualBrief differs from the locked brief')
+            if brief_data.get('repository') != data.get('repository'): errors.append('brief repository mismatch')
+            if brief_data.get('scope') != review.get('scope'): errors.append('brief and review scopes differ')
+            mappings = brief_data.get('localization', {}).get('readmeFiles', {})
+            reviewed = review.get('readmes', {})
+            if mappings and (not isinstance(reviewed, dict) or {k: v.get('path') for k, v in reviewed.items() if isinstance(v, dict)} != mappings):
+                errors.append('review README paths differ from the localized brief')
     return errors
 
 

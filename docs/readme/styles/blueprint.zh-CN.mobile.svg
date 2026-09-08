@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="320" viewBox="0 0 360 320" role="img"><title>MZ Beautify README — 工程蓝图</title><desc>风格构图示例；不是实际应用界面。</desc>
+<rect x="0" y="0" width="360" height="320" rx="0" fill="#e7edf9"/>
+<path d="M0 0L0 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M24 0L24 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M48 0L48 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M72 0L72 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M96 0L96 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M120 0L120 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M144 0L144 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M168 0L168 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M192 0L192 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M216 0L216 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M240 0L240 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M264 0L264 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M288 0L288 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M312 0L312 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M336 0L336 320" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 0L360 0" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 24L360 24" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 48L360 48" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 72L360 72" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 96L360 96" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 120L360 120" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 144L360 144" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 168L360 168" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 192L360 192" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 216L360 216" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 240L360 240" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 264L360 264" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 288L360 288" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<path d="M0 312L360 312" stroke="#cfdbef" stroke-width="1" fill="none"/>
+<text x="22" y="38" font-family="Consolas, Menlo, monospace" font-size="13" font-weight="600" fill="#253e80">MZ / BEAUTIFY</text>
+<text x="20" y="125" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="65" font-weight="600" fill="#253e80">README</text>
+<text x="23" y="169" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="17" font-weight="400" fill="#253e80">以真实内容，设计项目首页。</text>
+<rect x="23" y="207" width="93" height="70" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="34" y="232" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="600" fill="#4777c4">01</text>
+<text x="34" y="259" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#253e80">读项目</text>
+<path d="M116 243L134 243" stroke="#4777c4" stroke-width="3" fill="none"/>
+<rect x="134" y="207" width="93" height="70" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="145" y="232" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="600" fill="#4777c4">02</text>
+<text x="145" y="259" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#253e80">做设计</text>
+<path d="M227 243L245 243" stroke="#4777c4" stroke-width="3" fill="none"/>
+<rect x="245" y="207" width="93" height="70" rx="0" fill="#e7edf9" stroke="#4777c4" stroke-width="2"/>
+<text x="256" y="232" font-family="Consolas, Menlo, monospace" font-size="12" font-weight="600" fill="#4777c4">03</text>
+<text x="256" y="259" font-family="Segoe UI, Microsoft YaHei, PingFang SC, sans-serif" font-size="16" font-weight="600" fill="#253e80">看成品</text>
+</svg>

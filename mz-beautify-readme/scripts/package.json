@@ -1,0 +1,8 @@
+{
+  "name": "mz-readme-local-review",
+  "private": true,
+  "type": "module",
+  "engines": {"node": ">=22.12"},
+  "dependencies": {"marked": "17.0.5", "playwright": "1.62.1"},
+  "scripts": {"test": "node test_render_readme_review.mjs"}
+}

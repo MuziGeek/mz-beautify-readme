@@ -21,7 +21,7 @@ ALLOWED_ROOTS = {
 }
 FORBIDDEN_PARTS = {"raw", "rejected", "tmp", "__pycache__", ".pytest_cache"}
 TEXT_NAMES = {"LICENSE", ".gitignore", ".gitattributes"}
-TEXT_EXTENSIONS = {".json", ".md", ".py", ".svg", ".txt", ".yaml", ".yml"}
+TEXT_EXTENSIONS = {".json", ".md", ".py", ".mjs", ".svg", ".txt", ".yaml", ".yml"}
 BINARY_EXTENSIONS = {".png", ".jpg", ".jpeg", ".webp", ".gif"}
 FORBIDDEN_TEXT = (
     (re.compile(r"(?i)(api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[a-z0-9_\-]{16,}"), "possible secret"),
@@ -172,6 +172,7 @@ def main() -> int:
 
     showcase_checks = (
         ("Skill tests", PAYLOAD / "scripts" / "test_mz_beautify_readme.py", []),
+        ("Review evidence tests", PAYLOAD / "scripts" / "test_readme_review.py", []),
         ("English README audit", PAYLOAD / "scripts" / "audit_readme.py", [ROOT / "README.md"]),
         ("Chinese README audit", PAYLOAD / "scripts" / "audit_readme.py", [ROOT / "README.zh-CN.md"]),
     )

@@ -1,0 +1,90 @@
+{
+  "format": "mz.readme-style-examples/1",
+  "note": "Generated composition examples, not installed Engine presets.",
+  "styles": [
+    {
+      "id": "editorial",
+      "en": "Editorial",
+      "zh-CN": "杂志排版",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    {
+      "id": "terminal",
+      "en": "Terminal",
+      "zh-CN": "终端工具",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    {
+      "id": "blueprint",
+      "en": "Blueprint",
+      "zh-CN": "工程蓝图",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    {
+      "id": "colorblock",
+      "en": "Colorblock",
+      "zh-CN": "色块工作室",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    {
+      "id": "minimal",
+      "en": "Minimal",
+      "zh-CN": "黑白极简",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    {
+      "id": "fieldnotes",
+      "en": "Field notes",
+      "zh-CN": "纸上手记",
+      "implementation": "svg",
+      "locales": [
+        "en",
+        "zh-CN"
+      ],
+      "viewports": [
+        "desktop",
+        "mobile"
+      ]
+    }
+  ]
+}

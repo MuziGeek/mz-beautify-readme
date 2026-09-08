@@ -117,14 +117,14 @@ class AssetTests(unittest.TestCase):
             root = Path(raw)
             for name in ("hero.svg", "brief.json", "visual-brief.json"): (root / name).write_text(name, encoding="utf-8")
             record = lambda name: {"path": name, "sha256": hashlib.sha256((root / name).read_bytes()).hexdigest()}
-            data = {"format": "mz.readme-asset/3", "status": "READY_FOR_REVIEW", "repository": "owner/example", "upstreamCore": {"repository": "oil-oil/beautify-github-readme", "commit": UPSTREAM}, "brief": record("brief.json"), "visualBrief": record("visual-brief.json"), "publishedAsset": record("hero.svg"), "sources": [record("hero.svg")], "validation": {"safe": True}}
+            data = {"format": "mz.readme-asset/3", "status": "DRAFT", "repository": "owner/example", "upstreamCore": {"repository": "oil-oil/beautify-github-readme", "commit": UPSTREAM}, "brief": record("brief.json"), "visualBrief": record("visual-brief.json"), "publishedAsset": record("hero.svg"), "sources": [record("hero.svg")], "validation": {"safe": True}}
             self.assertEqual([], asset.validate(data, root)); data["publishedAsset"]["sha256"] = "0" * 64; self.assertTrue(any("hash mismatch" in item for item in asset.validate(data, root)))
     def test_multilingual_variant_coverage(self):
         with tempfile.TemporaryDirectory() as raw:
             root = Path(raw)
             for name in ("hero.webp", "hero.mobile.webp", "hero.zh-CN.webp", "hero.zh-CN.mobile.webp", "brief.json", "visual-brief.json"): (root / name).write_bytes(name.encode())
             record = lambda name, locale=None, viewport=None: {"path": name, "sha256": hashlib.sha256((root / name).read_bytes()).hexdigest(), **({"locale": locale, "viewport": viewport} if locale else {})}
-            data = {"format": "mz.readme-asset/3", "status": "READY_FOR_REVIEW", "repository": "owner/example", "upstreamCore": {"repository": "oil-oil/beautify-github-readme", "commit": UPSTREAM}, "localization": {"primaryLocale": "en", "outputLocales": ["en", "zh-CN"]}, "brief": record("brief.json"), "visualBrief": record("visual-brief.json"), "publishedAsset": record("hero.webp", "en", "desktop"), "variants": [record("hero.mobile.webp", "en", "mobile"), record("hero.zh-CN.webp", "zh-CN", "desktop"), record("hero.zh-CN.mobile.webp", "zh-CN", "mobile")], "sources": [record("brief.json")], "validation": {"safe": True}}
+            data = {"format": "mz.readme-asset/3", "status": "DRAFT", "repository": "owner/example", "upstreamCore": {"repository": "oil-oil/beautify-github-readme", "commit": UPSTREAM}, "localization": {"primaryLocale": "en", "outputLocales": ["en", "zh-CN"]}, "brief": record("brief.json"), "visualBrief": record("visual-brief.json"), "publishedAsset": record("hero.webp", "en", "desktop"), "variants": [record("hero.mobile.webp", "en", "mobile"), record("hero.zh-CN.webp", "zh-CN", "desktop"), record("hero.zh-CN.mobile.webp", "zh-CN", "mobile")], "sources": [record("brief.json")], "validation": {"safe": True}}
             self.assertEqual([], asset.validate(data, root)); data["variants"].pop(); self.assertIn("every output locale must provide the same viewport set", asset.validate(data, root))
 
 
